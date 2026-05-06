@@ -12,24 +12,15 @@
             <div class="carousel-track" id="carousel-track">
 
                 <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Diapositive 1 sur 3">
-                    <div class="placeholder-img">
-                        <span class="placeholder-rune">ᚢ</span>
-                        <span class="placeholder-label">Florent & Aurélie — 40 ans</span>
-                    </div>
+                    <img src="{{ asset('images/1.webp') }}" alt="Florent & Aurélie — 40 ans Viking" class="carousel-img">
                 </div>
 
                 <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Diapositive 2 sur 3">
-                    <div class="placeholder-img">
-                        <span class="placeholder-rune">ᚦ</span>
-                        <span class="placeholder-label">Soirée Viking • 2025</span>
-                    </div>
+                    <img src="{{ asset('images/2.webp') }}" alt="Soirée Viking" class="carousel-img">
                 </div>
 
                 <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Diapositive 3 sur 3">
-                    <div class="placeholder-img">
-                        <span class="placeholder-rune">ᚨ</span>
-                        <span class="placeholder-label">Costumes • Festin • Légendes</span>
-                    </div>
+                    <img src="{{ asset('images/3.webp') }}" alt="Costumes • Festin • Légendes" class="carousel-img">
                 </div>
 
             </div>
