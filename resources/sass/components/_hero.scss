@@ -1,7 +1,7 @@
 @use '../shared' as *;
 .hero {
     position: relative;
-    min-height: 100svh;
+    min-height: 65svh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -10,6 +10,7 @@
 
     @media (min-width: $bp-sm) {
         padding-top: $header-h-tablet;
+        min-height: 100svh;
     }
 }
 
@@ -48,7 +49,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
+    object-position: center top;
     display: block;
 }
 
