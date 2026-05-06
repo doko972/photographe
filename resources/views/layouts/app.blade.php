@@ -108,15 +108,14 @@
             </nav>
             <div class="footer-info">
                 <h4 class="footer-nav-title">L'Événement</h4>
-                <p>🗓️ Date : à définir</p>
-                <p>📍 Lieu : à définir</p>
-                <p>🍖 Festin viking au programme</p>
+                <p>Date : Weekend du 16 mai 2026</p>
+                <p>Lieu : Voir le Msg What'sApp</p>
+                <p>Festin viking au programme !</p>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© {{ date('Y') }} Florent & Aurélie</p>
-            <p>© Tous droits réservés · Fait avec ⚔️ et ❤️</p>
-            <p><link rel="stylesheet" href="https://ateliernormandduweb.fr/">Atelier Normand du Web</p>
+            <p>© {{ date('Y') }} Florent & Aurélie · Tous droits réservés</p>
+            <p>Site réalisé par <a href="https://ateliernormandduweb.fr/" target="_blank" rel="noopener noreferrer">Atelier Normand du Web</a></p>
         </div>
     </footer>
 
