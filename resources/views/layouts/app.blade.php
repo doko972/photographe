@@ -114,7 +114,9 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© {{ date('Y') }} Florent & Aurélie — Tous droits réservés · Fait avec ⚔️ et ❤️</p>
+            <p>© {{ date('Y') }} Florent & Aurélie</p>
+            <p>© Tous droits réservés · Fait avec ⚔️ et ❤️</p>
+            <p><link rel="stylesheet" href="https://ateliernormandduweb.fr/">Atelier Normand du Web</p>
         </div>
     </footer>
 
