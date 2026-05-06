@@ -66,6 +66,9 @@
                 @auth
                     <li><a href="{{ route('votes.favorites') }}" class="nav-link">Mes Favoris</a></li>
                     <li><a href="{{ route('photos.create') }}" class="nav-link nav-cta">⚔️ Poster ma photo</a></li>
+                    @if(auth()->user()->is_admin)
+                        <li><a href="{{ route('admin.dashboard') }}" class="nav-link">⚙️ Admin</a></li>
+                    @endif
                     <li><a href="{{ route('profile.edit') }}" class="nav-link">Mon Profil</a></li>
                     <li>
                         <form method="POST" action="{{ route('logout') }}">
