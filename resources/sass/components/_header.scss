@@ -1,0 +1,131 @@
+@use '../shared' as *;
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(13, 13, 13, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid $clr-border;
+    transition: box-shadow $transition;
+
+    &.scrolled {
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.6);
+    }
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: $header-h-mobile;
+    padding: 0 $space-sm;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    @media (min-width: $bp-sm) {
+        height: $header-h-tablet;
+    }
+
+    @media (min-width: $bp-md) {
+        padding: 0 $space-md;
+    }
+}
+
+// Logo
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    z-index: 10;
+}
+
+.logo-rune {
+    font-family: $font-title;
+    font-size: 1.8rem;
+    color: $clr-gold;
+    line-height: 1;
+    transition: transform $transition;
+
+    .logo:hover & {
+        transform: rotate(-8deg) scale(1.1);
+    }
+}
+
+.logo-text {
+    font-family: $font-display;
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: $clr-white;
+}
+
+.logo-amp {
+    color: $clr-gold;
+    margin: 0 1px;
+}
+
+// Nav desktop
+.nav-desktop {
+    display: none;
+
+    @media (min-width: $bp-md) {
+        display: flex;
+    }
+
+    ul {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+    }
+}
+
+.nav-link {
+    font-family: $font-display;
+    font-size: 0.78rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: $clr-grey-lt;
+    padding: 0.5rem 0.75rem;
+    border-radius: $radius-sm;
+    transition: color $transition, background $transition;
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 2px;
+        left: 50%;
+        right: 50%;
+        height: 1px;
+        background: $clr-gold;
+        transition: left $transition, right $transition;
+    }
+
+    &:hover,
+    &.active {
+        color: $clr-gold;
+
+        &::after {
+            left: 0.75rem;
+            right: 0.75rem;
+        }
+    }
+
+    &.nav-cta {
+        background: $clr-gold;
+        color: $clr-bg;
+        font-weight: 700;
+        padding: 0.5rem 1rem;
+
+        &::after { display: none; }
+
+        &:hover {
+            background: $clr-gold-lt;
+            color: $clr-bg;
+        }
+    }
+}

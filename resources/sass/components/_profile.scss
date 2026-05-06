@@ -1,0 +1,230 @@
+@use '../shared' as *;
+
+// ── Page layout ───────────────────────────────────────────────
+.profile-page {
+    max-width: 680px;
+    margin: $space-lg auto;
+    padding: 0 $space-sm;
+    display: flex;
+    flex-direction: column;
+    gap: $space-md;
+}
+
+// ── Section card ──────────────────────────────────────────────
+.profile-section {
+    background: $clr-surface;
+    border: 1px solid $clr-border;
+    border-radius: $radius-lg;
+    padding: $space-md;
+
+    &--danger {
+        border-color: rgba($clr-red, 0.35);
+        background: rgba($clr-red, 0.04);
+    }
+
+    &__title {
+        font-family: $font-title;
+        font-size: 1.25rem;
+        color: $clr-gold;
+        margin-bottom: $space-sm;
+        padding-bottom: $space-xs;
+        border-bottom: 1px solid $clr-border;
+    }
+
+    &__desc {
+        color: $clr-grey-lt;
+        font-size: 0.9rem;
+        margin-bottom: $space-sm;
+    }
+}
+
+// ── Form helpers inside profile ───────────────────────────────
+.profile-form {
+    display: flex;
+    flex-direction: column;
+    gap: $space-sm;
+}
+
+.form-label {
+    font-family: $font-display;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $clr-gold;
+
+    &__optional {
+        color: $clr-grey;
+        text-transform: none;
+        font-size: 0.75rem;
+    }
+}
+
+.form-input {
+    background: $clr-surface2;
+    border: 1px solid $clr-border;
+    border-radius: $radius-sm;
+    color: $clr-white;
+    font-family: $font-body;
+    font-size: 0.95rem;
+    padding: 0.75rem 1rem;
+    transition: border-color $transition;
+    width: 100%;
+
+    &:focus {
+        outline: none;
+        border-color: $clr-gold;
+    }
+
+    &::placeholder { color: $clr-grey; }
+    &.is-invalid    { border-color: $clr-red; }
+}
+
+.form-actions {
+    display: flex;
+    gap: $space-xs;
+    flex-wrap: wrap;
+    margin-top: $space-xs;
+}
+
+// ── Alert variants (also used by form.scss, defined here too) ─
+.alert {
+    padding: $space-sm $space-md;
+    border-radius: $radius-md;
+    font-family: $font-display;
+    font-size: 0.85rem;
+    letter-spacing: 0.03em;
+    margin-bottom: $space-sm;
+
+    &--success {
+        background: rgba(201, 147, 58, 0.1);
+        border: 1px solid rgba(201, 147, 58, 0.4);
+        color: $clr-gold-lt;
+    }
+
+    &--error {
+        background: rgba(224, 82, 82, 0.1);
+        border: 1px solid rgba(224, 82, 82, 0.4);
+        color: $clr-red;
+    }
+}
+
+// ── My Photos page ────────────────────────────────────────────
+.my-photos-page {
+    max-width: 960px;
+    margin: $space-lg auto;
+    padding: 0 $space-sm;
+}
+
+.my-photos-actions {
+    display: flex;
+    gap: $space-sm;
+    flex-wrap: wrap;
+    margin-bottom: $space-md;
+}
+
+.my-photos-empty {
+    text-align: center;
+    padding: $space-xl $space-md;
+    color: $clr-grey-lt;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $space-sm;
+
+    &__icon { font-size: 3rem; }
+
+    p { font-size: 1rem; }
+}
+
+.my-photos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: $space-sm;
+    margin-bottom: $space-md;
+}
+
+// ── Photo card (own photos) ───────────────────────────────────
+.my-photo-card {
+    background: $clr-surface;
+    border: 1px solid $clr-border;
+    border-radius: $radius-md;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: border-color $transition;
+
+    &:hover { border-color: $clr-gold; }
+
+    &__thumb {
+        position: relative;
+        aspect-ratio: 4 / 3;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+    }
+
+    &__status {
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        padding: 3px 10px;
+        border-radius: 20px;
+        font-family: $font-display;
+        font-size: 0.7rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+
+        &--approved {
+            background: rgba(82, 180, 100, 0.85);
+            color: #fff;
+        }
+        &--rejected {
+            background: rgba(224, 82, 82, 0.85);
+            color: #fff;
+        }
+        &--pending {
+            background: rgba(201, 147, 58, 0.85);
+            color: #000;
+        }
+    }
+
+    &__body {
+        padding: $space-sm;
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+        flex: 1;
+    }
+
+    &__pseudo {
+        font-family: $font-display;
+        font-size: 0.9rem;
+        color: $clr-gold-lt;
+        font-weight: 600;
+    }
+
+    &__caption {
+        color: $clr-grey-lt;
+        font-size: 0.82rem;
+        line-height: 1.4;
+    }
+
+    &__meta {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.78rem;
+        color: $clr-grey;
+        margin-top: auto;
+        padding-top: 0.4rem;
+    }
+}
+
+// ── Btn size modifier ─────────────────────────────────────────
+.btn--sm {
+    padding: 0.35rem 0.85rem;
+    font-size: 0.78rem;
+}

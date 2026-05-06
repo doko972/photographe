@@ -1,0 +1,102 @@
+@use '../shared' as *;
+.favorites-grid {
+    max-width: 1100px;
+    margin: $space-md auto;
+    padding: 0 $space-sm;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $space-sm;
+
+    @media (min-width: $bp-sm) { grid-template-columns: repeat(3, 1fr); }
+    @media (min-width: $bp-md) { grid-template-columns: repeat(4, 1fr); }
+}
+
+.fav-card {
+    background: $clr-surface;
+    border: 1px solid $clr-border;
+    border-radius: $radius-md;
+    overflow: hidden;
+    transition: border-color $transition, transform $transition;
+
+    &:hover {
+        border-color: $clr-gold;
+        transform: translateY(-3px);
+    }
+
+    &.voted {
+        border-color: $clr-gold;
+    }
+}
+
+.fav-card-img {
+    position: relative;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.fav-card-body {
+    padding: 0.75rem;
+}
+
+.fav-card-name {
+    font-family: $font-display;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: $clr-white;
+    margin-bottom: 0.5rem;
+}
+
+// Sélecteur de rang
+.rank-selector {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    label {
+        font-family: $font-display;
+        font-size: 0.7rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: $clr-gold;
+        flex-shrink: 0;
+    }
+
+    select {
+        flex: 1;
+        background: $clr-surface2;
+        border: 1px solid $clr-border;
+        border-radius: $radius-sm;
+        color: $clr-white;
+        font-family: $font-display;
+        font-size: 0.8rem;
+        padding: 0.3rem 0.5rem;
+        transition: border-color $transition;
+
+        &:focus {
+            outline: none;
+            border-color: $clr-gold;
+        }
+
+        option { background: $clr-surface2; }
+
+        &.rank-assigned { border-color: $clr-gold; color: $clr-gold; }
+    }
+}
+
+// Bouton sauvegarde votes
+.votes-save-bar {
+    position: sticky;
+    bottom: 0;
+    background: rgba(13, 13, 13, 0.95);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid $clr-border;
+    padding: $space-sm;
+    text-align: center;
+    z-index: 100;
+}

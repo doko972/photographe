@@ -1,0 +1,24 @@
+@use '../shared' as *;
+.toast {
+    position: fixed;
+    bottom: $space-md;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: $clr-surface2;
+    border: 1px solid $clr-gold;
+    color: $clr-white;
+    padding: 0.75rem 1.5rem;
+    border-radius: $radius-md;
+    font-family: $font-display;
+    font-size: 0.9rem;
+    z-index: 2000;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s;
+    opacity: 0;
+    pointer-events: none;
+    white-space: nowrap;
+
+    &.show {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+    }
+}

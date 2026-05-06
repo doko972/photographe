@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Poster ma photo — F&A Viking</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Cinzel:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+</head>
+<body data-page="poster">
+
+  <!-- ===== HEADER (identique index) ===== -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo" aria-label="Accueil">
+        <span class="logo-rune">ᚠ</span>
+        <span class="logo-text">F<span class="logo-amp">&</span>A</span>
+      </a>
+      <nav class="nav-desktop" aria-label="Navigation principale">
+        <ul>
+          <li><a href="index.html" class="nav-link">Accueil</a></li>
+          <li><a href="index.html#anniversaire" class="nav-link">L'Anniversaire</a></li>
+          <li><a href="index.html#ancetres" class="nav-link">Nos Ancêtres</a></li>
+          <li><a href="index.html#concours" class="nav-link">Concours</a></li>
+          <li><a href="poster.html" class="nav-link nav-cta active">Poster une photo</a></li>
+          <li><a href="galerie.html" class="nav-link">Galerie</a></li>
+        </ul>
+      </nav>
+      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-mobile">
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+      </button>
+    </div>
+    <nav class="nav-mobile" id="nav-mobile" aria-label="Navigation mobile" aria-hidden="true">
+      <ul>
+        <li><a href="index.html" class="nav-link">Accueil</a></li>
+        <li><a href="index.html#anniversaire" class="nav-link">L'Anniversaire</a></li>
+        <li><a href="index.html#ancetres" class="nav-link">Nos Ancêtres</a></li>
+        <li><a href="index.html#concours" class="nav-link">Concours</a></li>
+        <li><a href="poster.html" class="nav-link nav-cta">Poster une photo</a></li>
+        <li><a href="galerie.html" class="nav-link">Galerie</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== MAIN ===== -->
+  <main>
+
+    <!-- En-tête de page -->
+    <div class="page-header">
+      <div class="section-badge">ᚨ</div>
+      <h1>Poster ma photo</h1>
+      <p>Immortalisez votre costume viking et entrez dans la légende !</p>
+    </div>
+
+    <!-- Zone upload + formulaire -->
+    <section class="upload-section" aria-label="Formulaire de publication de photo">
+
+      <!-- Zone drag & drop / clic -->
+      <div class="upload-zone" id="upload-zone" role="button" tabindex="0" aria-label="Zone de dépôt de photo — cliquer ou glisser une image">
+        <input type="file" id="file-input" accept="image/*" aria-label="Choisir une photo" />
+        <span class="upload-icon" aria-hidden="true">📸</span>
+        <h3>Glissez votre photo ici</h3>
+        <p>ou cliquez pour sélectionner un fichier</p>
+        <p style="margin-top:0.5rem; font-size:0.78rem;">JPG, PNG, WEBP — max 10 Mo</p>
+      </div>
+
+      <!-- Aperçu de l'image sélectionnée -->
+      <div class="upload-preview" id="upload-preview" aria-label="Aperçu de la photo sélectionnée">
+        <img id="preview-img" src="" alt="Aperçu de votre photo" />
+        <button class="preview-remove" id="preview-remove" aria-label="Supprimer la photo sélectionnée">✕</button>
+      </div>
+
+      <!-- Formulaire de soumission -->
+      <form class="upload-form" id="upload-form" novalidate>
+
+        <div class="form-group">
+          <label for="input-name">Votre prénom et nom</label>
+          <input type="text" id="input-name" name="name" placeholder="Ex : Thomas Durand" autocomplete="name" />
+        </div>
+
+        <div class="form-group">
+          <label for="input-pseudo">Votre surnom viking <span style="color:var(--clr-gold)">*</span></label>
+          <input type="text" id="input-pseudo" name="pseudo" placeholder="Ex : Björn le Valeureux" required />
+        </div>
+
+        <div class="form-group">
+          <label for="input-caption">Une légende pour la photo</label>
+          <textarea id="input-caption" name="caption" placeholder="Décrivez votre costume ou votre exploit du soir…"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary" id="submit-btn" style="align-self:center; margin-top:0.5rem;">
+          ⚔️ Publier dans la galerie
+        </button>
+
+      </form>
+
+      <!-- Indicateur de connexion (maquette) -->
+      <div class="login-notice" aria-label="Information de connexion">
+        <p>🔒 <strong>Note :</strong> La connexion obligatoire sera activée sur le site final. En maquette, vous pouvez poster librement.</p>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer" aria-label="Pied de page">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo-rune">ᚠ</span>
+        <span class="logo-text">F<span class="logo-amp">&</span>A</span>
+        <p class="footer-tagline">Quarante hivers • Deux légendes</p>
+      </div>
+      <nav class="footer-nav" aria-label="Navigation pied de page">
+        <h4 class="footer-nav-title">Navigation</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="index.html#anniversaire">L'Anniversaire</a></li>
+          <li><a href="index.html#ancetres">Nos Ancêtres</a></li>
+          <li><a href="index.html#concours">Le Concours</a></li>
+          <li><a href="poster.html">Poster une photo</a></li>
+          <li><a href="galerie.html">La Galerie</a></li>
+        </ul>
+      </nav>
+      <div class="footer-info">
+        <h4 class="footer-nav-title">L'Événement</h4>
+        <p>🗓️ Date : à définir</p>
+        <p>📍 Lieu : à définir</p>
+        <p>🍖 Festin viking au programme</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Florent & Aurélie — Tous droits réservés · Fait avec ⚔️ et ❤️</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

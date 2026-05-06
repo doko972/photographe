@@ -1,0 +1,221 @@
+@use '../shared' as *;
+.section {
+    position: relative;
+    z-index: 1;
+    padding: $space-lg 0;
+
+    @media (min-width: $bp-md) {
+        padding: $space-xl 0;
+    }
+}
+
+.section-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 $space-sm;
+}
+
+.section-anniv    { background: $clr-surface; }
+.section-ancetres {
+    background-color: $clr-bg;
+    background-image:
+        linear-gradient(to bottom, rgba($clr-bg, 0.82) 0%, rgba($clr-bg, 0.72) 50%, rgba($clr-bg, 0.88) 100%),
+        var(--drakkar-bg);
+    background-size: cover;
+    background-position: center 40%;
+    background-attachment: fixed;
+}
+.section-concours { background: $clr-surface; }
+
+.section-anniv::before,
+.section-concours::before {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, $clr-gold, transparent);
+    margin: 0 auto $space-md;
+}
+
+// ── Cartes Anniversaire ───────────────────────────────────────
+.two-cols {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $space-md;
+
+    @media (min-width: $bp-sm) {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.card {
+    background: $clr-surface2;
+    border: 1px solid $clr-border;
+    border-radius: $radius-lg;
+    padding: $space-md;
+    text-align: center;
+    transition: border-color $transition, transform $transition;
+
+    &:hover {
+        border-color: $clr-gold;
+        transform: translateY(-4px);
+    }
+
+    h3 {
+        font-family: $font-title;
+        font-size: 1.5rem;
+        color: $clr-gold;
+        margin-bottom: 0.5rem;
+    }
+
+    p { color: $clr-grey-lt; font-size: 0.95rem; }
+}
+
+.card-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto $space-sm;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid $clr-gold;
+}
+
+.placeholder-avatar {
+    background: linear-gradient(135deg, $clr-rust, $clr-gold);
+    font-family: $font-title;
+    font-size: 2rem;
+    color: $clr-bg;
+}
+
+// ── Facts Grid (Ancêtres) ─────────────────────────────────────
+.facts-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $space-sm;
+
+    @media (min-width: $bp-sm) { grid-template-columns: 1fr 1fr; }
+    @media (min-width: $bp-md) { grid-template-columns: repeat(4, 1fr); }
+}
+
+.fact-card {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid $clr-border;
+    border-radius: $radius-lg;
+    min-height: 340px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition: border-color $transition, transform $transition, box-shadow $transition;
+    cursor: default;
+
+    // ── Image de fond (photo réelle) ─────────────────────────
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        transition: transform 0.65s ease;
+    }
+
+    // ── Voile dégradé pour lisibilité du texte ───────────────
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        background: linear-gradient(
+            to top,
+            rgba($clr-bg, 0.97) 0%,
+            rgba($clr-bg, 0.75) 38%,
+            rgba($clr-bg, 0.15) 65%,
+            transparent 100%
+        );
+        pointer-events: none;
+        transition: opacity $transition;
+    }
+
+    &:hover {
+        border-color: $clr-gold;
+        transform: translateY(-6px);
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+
+        &::before { transform: scale(1.08); }
+    }
+
+    // ── Image injectée via CSS custom property (asset() Blade) ─
+    &::before {
+        background-image: var(--card-bg);
+    }
+}
+
+// ── Zone texte (bas de la carte, sur le voile sombre) ─────────
+.fact-content {
+    position: relative;
+    z-index: 2;
+    padding: $space-sm $space-md $space-md;
+    border-top: 1px solid rgba($clr-gold, 0.2);
+    margin-top: $space-sm;
+
+    h3 {
+        font-family: $font-display;
+        font-size: 0.95rem;
+        color: $clr-gold-lt;
+        margin-bottom: 0.4rem;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+    }
+
+    p { color: $clr-grey-lt; font-size: 0.85rem; line-height: 1.55; }
+}
+
+// ── Étapes Concours ───────────────────────────────────────────
+.steps-list {
+    display: flex;
+    flex-direction: column;
+    gap: $space-sm;
+}
+
+.step {
+    display: flex;
+    align-items: flex-start;
+    gap: $space-sm;
+    background: $clr-surface2;
+    border: 1px solid $clr-border;
+    border-radius: $radius-md;
+    padding: $space-sm $space-md;
+    transition: border-color $transition;
+
+    &:hover { border-color: $clr-gold; }
+}
+
+.step-number {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: $clr-gold;
+    color: $clr-bg;
+    font-family: $font-title;
+    font-size: 1.1rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.step-body {
+    h3 {
+        font-family: $font-display;
+        font-size: 1rem;
+        color: $clr-white;
+        margin-bottom: 0.3rem;
+    }
+
+    p { color: $clr-grey-lt; font-size: 0.9rem; }
+}

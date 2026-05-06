@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Florent & Aurélie — 40 Ans Viking</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Google Fonts : MedievalSharp pour les titres, Cinzel pour les sous-titres, Lato pour le corps -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Cinzel:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+
+      <!-- Logo -->
+      <a href="index.html" class="logo" aria-label="Accueil">
+        <span class="logo-rune">ᚠ</span>
+        <span class="logo-text">F<span class="logo-amp">&</span>A</span>
+      </a>
+
+      <!-- Navigation desktop -->
+      <nav class="nav-desktop" aria-label="Navigation principale">
+        <ul>
+          <li><a href="index.html" class="nav-link active">Accueil</a></li>
+          <li><a href="#anniversaire" class="nav-link">L'Anniversaire</a></li>
+          <li><a href="#ancetres" class="nav-link">Nos Ancêtres</a></li>
+          <li><a href="#concours" class="nav-link">Concours</a></li>
+          <li><a href="poster.html" class="nav-link nav-cta">Poster une photo</a></li>
+          <li><a href="galerie.html" class="nav-link">Galerie</a></li>
+        </ul>
+      </nav>
+
+      <!-- Burger button (mobile) -->
+      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-mobile">
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+      </button>
+
+    </div>
+
+    <!-- Navigation mobile (panneau déroulant) -->
+    <nav class="nav-mobile" id="nav-mobile" aria-label="Navigation mobile" aria-hidden="true">
+      <ul>
+        <li><a href="index.html" class="nav-link active">Accueil</a></li>
+        <li><a href="#anniversaire" class="nav-link">L'Anniversaire</a></li>
+        <li><a href="#ancetres" class="nav-link">Nos Ancêtres</a></li>
+        <li><a href="#concours" class="nav-link">Concours</a></li>
+        <li><a href="poster.html" class="nav-link nav-cta">Poster une photo</a></li>
+        <li><a href="galerie.html" class="nav-link">Galerie</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== MAIN ===== -->
+  <main>
+
+    <!-- ===== SECTION HERO + CAROUSEL ===== -->
+    <section class="hero" aria-label="Présentation de l'événement">
+
+      <!-- Carousel d'images -->
+      <div class="carousel" id="carousel" aria-roledescription="carousel" aria-label="Images de l'événement">
+
+        <!-- Slides (placeholders) -->
+        <div class="carousel-track" id="carousel-track">
+
+          <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Diapositive 1 sur 3">
+            <div class="placeholder-img">
+              <span class="placeholder-rune">ᚢ</span>
+              <span class="placeholder-label">Florent & Aurélie — 40 ans</span>
+            </div>
+          </div>
+
+          <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Diapositive 2 sur 3">
+            <div class="placeholder-img">
+              <span class="placeholder-rune">ᚦ</span>
+              <span class="placeholder-label">Soirée Viking • 2025</span>
+            </div>
+          </div>
+
+          <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Diapositive 3 sur 3">
+            <div class="placeholder-img">
+              <span class="placeholder-rune">ᚨ</span>
+              <span class="placeholder-label">Costumes • Festin • Légendes</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Contrôles carousel -->
+        <button class="carousel-btn carousel-prev" id="carousel-prev" aria-label="Diapositive précédente">&#10094;</button>
+        <button class="carousel-btn carousel-next" id="carousel-next" aria-label="Diapositive suivante">&#10095;</button>
+
+        <!-- Indicateurs (dots) -->
+        <div class="carousel-dots" id="carousel-dots" aria-label="Indicateurs de diapositives">
+          <button class="dot active" data-index="0" aria-label="Aller à la diapositive 1"></button>
+          <button class="dot" data-index="1" aria-label="Aller à la diapositive 2"></button>
+          <button class="dot" data-index="2" aria-label="Aller à la diapositive 3"></button>
+        </div>
+
+      </div>
+
+      <!-- Texte hero par-dessus le carousel -->
+      <div class="hero-content">
+        <p class="hero-eyebrow">Une soirée hors du temps</p>
+        <h1 class="hero-title">Florent <span class="hero-amp">&</span> Aurélie</h1>
+        <p class="hero-subtitle">Fêtent leurs <strong>40 printemps</strong> sous la bannière des Vikings</p>
+        <div class="hero-actions">
+          <a href="poster.html" class="btn btn-primary">Poster ma photo</a>
+          <a href="galerie.html" class="btn btn-secondary">Voir la galerie</a>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ===== SECTION ANNIVERSAIRE ===== -->
+    <section class="section section-anniv" id="anniversaire" aria-labelledby="anniv-title">
+      <div class="section-inner">
+        <div class="section-badge">ᚠ</div>
+        <h2 class="section-title" id="anniv-title">L'Anniversaire</h2>
+        <p class="section-subtitle">Deux guerriers, un même festin</p>
+        <div class="section-content two-cols">
+          <div class="card card-person">
+            <div class="card-avatar placeholder-avatar">F</div>
+            <h3>Florent</h3>
+            <p>Quarante hivers à parcourir les fjords de la vie, toujours prêt pour la prochaine aventure.</p>
+          </div>
+          <div class="card card-person">
+            <div class="card-avatar placeholder-avatar">A</div>
+            <h3>Aurélie</h3>
+            <p>Valkyrie au cœur vaillant, quarante saisons à illuminer le chemin de ceux qui l'entourent.</p>
+          </div>
+        </div>
+        <p class="section-desc">
+          Rejoignez-nous pour ce festin mémorable, costumés en dignes descendants des Normands.
+          Une nuit de légendes, de rires et de souvenirs gravés comme des runes.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== SECTION NOS ANCÊTRES ===== -->
+    <section class="section section-ancetres" id="ancetres" aria-labelledby="ancetres-title">
+      <div class="section-inner">
+        <div class="section-badge">ᚢ</div>
+        <h2 class="section-title" id="ancetres-title">Nos Ancêtres</h2>
+        <p class="section-subtitle">Les Vikings & les Normands — Qui étaient-ils vraiment ?</p>
+        <div class="section-content facts-grid">
+
+          <article class="fact-card">
+            <div class="fact-icon">⚔️</div>
+            <h3>Des guerriers… et des marchands</h3>
+            <p>Les Vikings n'étaient pas que des pillards. Explorateurs, commerçants et bâtisseurs, ils ont façonné l'Europe médiévale.</p>
+          </article>
+
+          <article class="fact-card">
+            <div class="fact-icon">🪖</div>
+            <h3>Pas de cornes sur les casques !</h3>
+            <p>Contrairement au mythe populaire, les casques vikings étaient simples, souvent en cuir ou en métal, sans ornement cornu.</p>
+          </article>
+
+          <article class="fact-card">
+            <div class="fact-icon">⛵</div>
+            <h3>Les Normands en Normandie</h3>
+            <p>Installés en France au Xe siècle, les "hommes du Nord" (Normands) ont donné leur nom à la Normandie et ont conquis l'Angleterre en 1066.</p>
+          </article>
+
+          <article class="fact-card">
+            <div class="fact-icon">ᚱ</div>
+            <h3>L'écriture runique</h3>
+            <p>Les runes étaient l'alphabet des peuples germaniques nordiques, gravées sur pierres, armes et bijoux pour transmettre messages et sortilèges.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION CONCOURS ===== -->
+    <section class="section section-concours" id="concours" aria-labelledby="concours-title">
+      <div class="section-inner">
+        <div class="section-badge">ᚦ</div>
+        <h2 class="section-title" id="concours-title">Le Concours de Costumes</h2>
+        <p class="section-subtitle">Que le meilleur Viking l'emporte !</p>
+        <div class="section-content steps-list">
+
+          <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-body">
+              <h3>Préparez votre costume</h3>
+              <p>Enfilez votre plus bel habit viking ou normand — tunique, fourrure, épée en mousse… soyez créatifs !</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-body">
+              <h3>Prenez-vous en photo</h3>
+              <p>Seul, en duo ou en groupe. Le photomaton viking vous attend sur place !</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-body">
+              <h3>Postez votre photo</h3>
+              <p>Connectez-vous et uploadez votre meilleur cliché sur le site dédié.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">4</div>
+            <div class="step-body">
+              <h3>Votez pour votre favori !</h3>
+              <p>Parcourez la galerie, likez les photos et élisez le champion ou la championne viking de la soirée.</p>
+            </div>
+          </div>
+
+        </div>
+        <a href="poster.html" class="btn btn-primary btn-center">Je participe !</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer" aria-label="Pied de page">
+    <div class="footer-inner">
+
+      <!-- Logo footer -->
+      <div class="footer-brand">
+        <span class="logo-rune">ᚠ</span>
+        <span class="logo-text">F<span class="logo-amp">&</span>A</span>
+        <p class="footer-tagline">Quarante hivers • Deux légendes</p>
+      </div>
+
+      <!-- Menu footer -->
+      <nav class="footer-nav" aria-label="Navigation pied de page">
+        <h4 class="footer-nav-title">Navigation</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="#anniversaire">L'Anniversaire</a></li>
+          <li><a href="#ancetres">Nos Ancêtres</a></li>
+          <li><a href="#concours">Le Concours</a></li>
+          <li><a href="poster.html">Poster une photo</a></li>
+          <li><a href="galerie.html">La Galerie</a></li>
+        </ul>
+      </nav>
+
+      <!-- Infos événement -->
+      <div class="footer-info">
+        <h4 class="footer-nav-title">L'Événement</h4>
+        <p>🗓️ Date : à définir</p>
+        <p>📍 Lieu : à définir</p>
+        <p>🍖 Festin viking au programme</p>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Florent & Aurélie — Tous droits réservés · Fait avec ⚔️ et ❤️</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

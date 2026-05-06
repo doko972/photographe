@@ -1,0 +1,167 @@
+@use '../shared' as *;
+.admin-layout {
+    display: flex;
+    min-height: 100vh;
+    padding-top: $header-h-mobile;
+
+    @media (min-width: $bp-sm) {
+        padding-top: $header-h-tablet;
+    }
+}
+
+.admin-sidebar {
+    width: 220px;
+    flex-shrink: 0;
+    background: $clr-surface;
+    border-right: 1px solid $clr-border;
+    padding: $space-md $space-sm;
+    position: sticky;
+    top: $header-h-mobile;
+    height: calc(100vh - #{$header-h-mobile});
+    overflow-y: auto;
+
+    @media (min-width: $bp-sm) {
+        top: $header-h-tablet;
+        height: calc(100vh - #{$header-h-tablet});
+    }
+
+    h3 {
+        font-family: $font-display;
+        font-size: 0.7rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: $clr-gold;
+        margin-bottom: $space-sm;
+    }
+}
+
+.admin-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    a {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.6rem 0.75rem;
+        border-radius: $radius-sm;
+        font-family: $font-display;
+        font-size: 0.8rem;
+        color: $clr-grey-lt;
+        transition: background $transition, color $transition;
+
+        &:hover,
+        &.active {
+            background: rgba(201, 147, 58, 0.1);
+            color: $clr-gold;
+        }
+    }
+}
+
+.admin-main {
+    flex: 1;
+    padding: $space-md;
+    overflow-x: auto;
+}
+
+.admin-title {
+    font-family: $font-title;
+    font-size: 1.8rem;
+    color: $clr-white;
+    margin-bottom: $space-md;
+}
+
+// Stats cards
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $space-sm;
+    margin-bottom: $space-md;
+
+    @media (min-width: $bp-md) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.stat-card {
+    background: $clr-surface2;
+    border: 1px solid $clr-border;
+    border-radius: $radius-md;
+    padding: $space-sm;
+    text-align: center;
+
+    &__value {
+        font-family: $font-title;
+        font-size: 2.5rem;
+        color: $clr-gold;
+        line-height: 1;
+    }
+
+    &__label {
+        font-family: $font-display;
+        font-size: 0.75rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: $clr-grey;
+        margin-top: 0.25rem;
+    }
+}
+
+// Table
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+
+    th {
+        font-family: $font-display;
+        font-size: 0.75rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: $clr-gold;
+        text-align: left;
+        padding: 0.75rem 1rem;
+        border-bottom: 1px solid $clr-border;
+        white-space: nowrap;
+    }
+
+    td {
+        padding: 0.75rem 1rem;
+        border-bottom: 1px solid $clr-border;
+        color: $clr-grey-lt;
+        vertical-align: middle;
+    }
+
+    tr:hover td { background: $clr-surface2; }
+}
+
+.admin-thumb {
+    width: 56px;
+    height: 42px;
+    object-fit: cover;
+    border-radius: $radius-sm;
+}
+
+// Status badges
+.badge {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    border-radius: $radius-sm;
+    font-family: $font-display;
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 700;
+
+    &-pending  { background: rgba(201, 147, 58, 0.15); color: $clr-gold; }
+    &-approved { background: rgba(50, 180, 100, 0.15); color: #5cd68a; }
+    &-rejected { background: rgba(224, 82, 82, 0.15);  color: $clr-red; }
+}
+
+// Action group
+.action-group {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+}

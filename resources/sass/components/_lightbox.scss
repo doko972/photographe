@@ -1,0 +1,56 @@
+@use '../shared' as *;
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.93);
+    z-index: 3000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    padding: $space-sm;
+
+    &.open {
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+
+.lightbox-inner {
+    max-width: 90vw;
+    max-height: 90vh;
+    position: relative;
+    border: 1px solid $clr-border;
+    border-radius: $radius-md;
+    overflow: hidden;
+    background: $clr-surface;
+
+    img {
+        max-width: 85vw;
+        max-height: 80vh;
+        border-radius: $radius-md;
+        display: block;
+    }
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(0, 0, 0, 0.6);
+    color: $clr-white;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid $clr-border;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background $transition;
+    z-index: 10;
+
+    &:hover { background: $clr-rust; }
+}

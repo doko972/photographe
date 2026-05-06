@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galerie des Vikings — F&A</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Cinzel:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+</head>
+<body data-page="galerie">
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo" aria-label="Accueil">
+        <span class="logo-rune">ᚠ</span>
+        <span class="logo-text">F<span class="logo-amp">&</span>A</span>
+      </a>
+      <nav class="nav-desktop" aria-label="Navigation principale">
+        <ul>
+          <li><a href="index.html" class="nav-link">Accueil</a></li>
+          <li><a href="index.html#anniversaire" class="nav-link">L'Anniversaire</a></li>
+          <li><a href="index.html#ancetres" class="nav-link">Nos Ancêtres</a></li>
+          <li><a href="index.html#concours" class="nav-link">Concours</a></li>
+          <li><a href="poster.html" class="nav-link nav-cta">Poster une photo</a></li>
+          <li><a href="galerie.html" class="nav-link active">Galerie</a></li>
+        </ul>
+      </nav>
+      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-mobile">
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+      </button>
+    </div>
+    <nav class="nav-mobile" id="nav-mobile" aria-label="Navigation mobile" aria-hidden="true">
+      <ul>
+        <li><a href="index.html" class="nav-link">Accueil</a></li>
+        <li><a href="index.html#anniversaire" class="nav-link">L'Anniversaire</a></li>
+        <li><a href="index.html#ancetres" class="nav-link">Nos Ancêtres</a></li>
+        <li><a href="index.html#concours" class="nav-link">Concours</a></li>
+        <li><a href="poster.html" class="nav-link nav-cta">Poster une photo</a></li>
+        <li><a href="galerie.html" class="nav-link active">Galerie</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== MAIN ===== -->
+  <main>
+
+    <!-- En-tête de page -->
+    <div class="page-header">
+      <div class="section-badge">ᚷ</div>
+      <h1>La Galerie des Vikings</h1>
+      <p>Votez pour votre costume préféré en cliquant sur le cœur ❤️</p>
+    </div>
+
+    <!-- Contrôles : tri + compteur -->
+    <div class="gallery-controls">
+      <div class="gallery-sort" role="group" aria-label="Trier les photos">
+        <button class="sort-btn active" data-sort="recent" aria-pressed="true">🕐 Plus récentes</button>
+        <button class="sort-btn" data-sort="popular" aria-pressed="false">🔥 Plus populaires</button>
+      </div>
+      <p class="gallery-count" id="gallery-count" aria-live="polite">— photos</p>
+    </div>
+
+    <!-- Grille des photos -->
+    <div class="gallery-grid" id="gallery-grid" aria-label="Galerie des photos de costumes">
+      <!-- Cartes générées dynamiquement par script.js -->
+      <p class="gallery-empty" style="grid-column:1/-1; text-align:center; color:var(--clr-grey); padding:4rem 1rem; font-family:var(--font-display);">
+        Chargement des photos…
+      </p>
+    </div>
+
+    <!-- Bouton vers poster une photo -->
+    <div style="text-align:center; padding: 0 1rem 4rem;">
+      <p style="color:var(--clr-grey-lt); margin-bottom:1rem; font-family:var(--font-display); font-size:0.9rem; letter-spacing:0.05em;">
+        Pas encore de costume dans la galerie ? Soyez le premier !
+      </p>
+      <a href="poster.html" class="btn btn-primary">⚔️ Poster ma photo</a>
+    </div>
+
+  </main>
+
+  <!-- ===== LIGHTBOX ===== -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Agrandissement de la photo" aria-hidden="true">
+    <div class="lightbox-inner">
+      <button class="lightbox-close" id="lightbox-close" aria-label="Fermer">✕</button>
+      <div id="lightbox-body"></div>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer" aria-label="Pied de page">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo-rune">ᚠ</span>
+        <span class="logo-text">F<span class="logo-amp">&</span>A</span>
+        <p class="footer-tagline">Quarante hivers • Deux légendes</p>
+      </div>
+      <nav class="footer-nav" aria-label="Navigation pied de page">
+        <h4 class="footer-nav-title">Navigation</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="index.html#anniversaire">L'Anniversaire</a></li>
+          <li><a href="index.html#ancetres">Nos Ancêtres</a></li>
+          <li><a href="index.html#concours">Le Concours</a></li>
+          <li><a href="poster.html">Poster une photo</a></li>
+          <li><a href="galerie.html">La Galerie</a></li>
+        </ul>
+      </nav>
+      <div class="footer-info">
+        <h4 class="footer-nav-title">L'Événement</h4>
+        <p>🗓️ Date : à définir</p>
+        <p>📍 Lieu : à définir</p>
+        <p>🍖 Festin viking au programme</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Florent & Aurélie — Tous droits réservés · Fait avec ⚔️ et ❤️</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

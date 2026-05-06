@@ -1,0 +1,148 @@
+@use '../shared' as *;
+.podium-section {
+    max-width: 1100px;
+    margin: $space-md auto $space-lg;
+    padding: 0 $space-sm;
+}
+
+.podium-top3 {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: $space-sm;
+    margin-bottom: $space-lg;
+}
+
+.podium-place {
+    text-align: center;
+    flex: 1;
+    max-width: 280px;
+
+    &--1 {
+        order: 2;
+
+        .podium-stand { height: 120px; background: $clr-gold; }
+        .podium-photo { width: 120px; height: 120px; border: 3px solid $clr-gold; }
+    }
+
+    &--2 {
+        order: 1;
+
+        .podium-stand { height: 90px; background: $clr-grey; }
+        .podium-photo { width: 100px; height: 100px; border: 3px solid $clr-grey; }
+    }
+
+    &--3 {
+        order: 3;
+
+        .podium-stand { height: 70px; background: $clr-rust; }
+        .podium-photo { width: 90px; height: 90px; border: 3px solid $clr-rust; }
+    }
+}
+
+.podium-medal {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.podium-photo {
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 0.5rem;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.podium-name {
+    font-family: $font-display;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: $clr-white;
+    margin-bottom: 0.2rem;
+}
+
+.podium-score {
+    font-family: $font-title;
+    font-size: 0.8rem;
+    color: $clr-gold;
+}
+
+.podium-stand {
+    border-radius: $radius-sm $radius-sm 0 0;
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span {
+        font-family: $font-title;
+        font-size: 2rem;
+        color: $clr-bg;
+        font-weight: 700;
+    }
+}
+
+// Classement complet
+.ranking-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.ranking-item {
+    display: flex;
+    align-items: center;
+    gap: $space-sm;
+    background: $clr-surface;
+    border: 1px solid $clr-border;
+    border-radius: $radius-md;
+    padding: 0.75rem $space-sm;
+    transition: border-color $transition;
+
+    &:hover { border-color: $clr-gold; }
+}
+
+.ranking-pos {
+    font-family: $font-title;
+    font-size: 1.2rem;
+    color: $clr-gold;
+    width: 32px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.ranking-thumb {
+    width: 56px;
+    height: 56px;
+    border-radius: $radius-sm;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.ranking-info {
+    flex: 1;
+
+    h3 {
+        font-family: $font-display;
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: $clr-white;
+        margin-bottom: 0.2rem;
+    }
+
+    p { color: $clr-grey; font-size: 0.8rem; }
+}
+
+.ranking-score {
+    font-family: $font-title;
+    font-size: 1rem;
+    color: $clr-gold;
+    flex-shrink: 0;
+    text-align: right;
+}
